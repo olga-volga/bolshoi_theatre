@@ -1,0 +1,97 @@
+.main {
+	position: relative;
+	background-image: linear-gradient(rgba($bg, 0.85), rgba($bg, 0.85)), url('img/main/bg.jpg');
+    background-position: 50% 0%;
+    background-size: auto;
+    background-repeat: no-repeat;
+	padding: 50px 0 208px;
+
+	&__body {
+		display: flex;
+		align-items: center;
+		margin-top: 190px;
+	}
+	&__text-block {
+		width: 540px;
+		margin-right: 125px;
+	}
+	&__title {
+		font-weight: 700;
+		font-size: 64px;
+		line-height: 87px;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+		color: $light;
+	}
+	&__descr {
+		font-family: $font-additional;
+		font-style: normal;
+		font-weight: 400;
+		font-size: 14px;
+		line-height: 150%;
+		/* or 21px */
+		color: $light;
+		margin-top: 50px;
+	}
+	&-slider {
+		max-width: 370px;
+
+		&__inner {}
+		&__slide {
+			position: relative;
+			img {
+				position: relative;
+				display: block;
+				max-width: 350px;
+				z-index: 10;
+			}
+			&::after {
+				content: "";
+				position: absolute;
+				top: 20px;
+				left: 20px;
+				width: 350px;
+				height: 490px;
+				background-image: linear-gradient(0deg, rgba($accent, 0.85), rgba($accent, 0.85)), url('img/main/slide.jpg');
+			}
+		}
+		/*&__slide-shadow {}*/
+		.arrows {
+			display: flex;
+	        justify-content: space-between;
+	        width: 100%;
+	        margin-top: 55px;
+		}
+		.arrow {
+			display: block;
+			font-weight: 700;
+			font-size: 18px;
+			line-height: 25px;
+			letter-spacing: 0.1em;
+			text-transform: uppercase;
+			color: $gray;
+			cursor: pointer;
+
+			span {
+				display: inline-block;
+				font-size: 36px;
+			}
+
+			&_prev {
+				span {
+					margin-right: 25px;
+				}
+			}
+
+			&_next {
+				span {
+					margin-left: 25px;
+				}
+			}
+
+			&:hover {
+				color: $light;
+			}
+		}
+	}
+}

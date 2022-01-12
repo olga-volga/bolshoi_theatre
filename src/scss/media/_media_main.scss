@@ -1,0 +1,13 @@
+.main {
+	@media (max-width: $maxw) {
+		&__body {
+			margin-top: 231px;
+		}
+		&__text-block {
+			margin-right: 0;
+		}
+		&-slider {
+			display: none;
+		}
+	}
+}

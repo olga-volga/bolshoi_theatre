@@ -1,0 +1,17 @@
+.button {
+	height: 50px;
+	font-weight: 700;
+	font-size: 18px;
+	line-height: 25px;
+	text-align: center;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+	color: $light;
+	background-color: $accent;
+	cursor: pointer;
+
+	&_main {
+		width: 160px;
+		margin-top: 49px;
+	}
+}

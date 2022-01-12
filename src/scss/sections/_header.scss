@@ -1,0 +1,46 @@
+.header {
+	display: flex;
+	justify-content: space-between;
+
+	&__burger {
+		display: none;
+	}
+	&__menu {
+		max-width: 824px;
+		width: 100%;
+	}
+	&__list {
+		display: flex;
+		justify-content: space-between;
+		li {}
+	}
+	&__link {
+		font-weight: 700;
+		font-size: 18px;
+		line-height: 25px;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+		color: $light;
+	}
+	&__phone {
+		display: block;
+		font-weight: 700;
+		font-size: 16px;
+		line-height: 22px;
+		letter-spacing: 0.05em;
+		text-transform: uppercase;
+		color: $light;
+
+		&::after {
+			content: "";
+			display: block;
+			border-bottom: 2px solid $accent;
+		}
+
+		&:hover {
+			&::after {
+				border-bottom-color: transparent;
+			}
+		}
+	}
+}

@@ -1,0 +1,57 @@
+.aside {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 150px;
+	height: 100%;
+    display: flex;
+    align-items: flex-end;
+	background-color: rgba($bg, 0.75);
+	padding-bottom: 86px;
+
+	&__body {
+		width: 150px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	&__text {
+		width: 245px;
+		font-weight: 700;
+		font-size: 18px;
+		line-height: 25px;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+		color: $gray;
+
+		span {
+			display: flex;
+			transform: rotate(-90deg) translateX(150px);
+		}
+	}
+	&__divider {
+		height: 80px;
+		border-left: 3px solid $gray;
+	}
+	&__social {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin-top: 40px;
+
+		li {
+			margin-top: 30px;
+			&:first-child {
+				margin-top: 0;
+			}
+		}
+	}
+	&__link {}
+	&__svg {
+		fill: rgba($light, 0.6);
+
+		&:hover {
+			fill: $accent;
+		}
+	}
+}
