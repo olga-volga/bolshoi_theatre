@@ -10,4 +10,24 @@
 			display: none;
 		}
 	}
+	@media (max-width: $md2) {
+		&__body {
+			margin-top: 169px;
+		}
+	}
+	@media (max-width: $md4) {
+		&__body {
+			margin-top: 114px;
+		}
+	}
+	@media (max-width: $md6) {
+		&__title {
+			font-size: 50px;
+			line-height: 67px;
+			letter-spacing: 0.1em;
+		}
+		&__descr {
+			margin-top: 30px;
+		}
+	}
 }
