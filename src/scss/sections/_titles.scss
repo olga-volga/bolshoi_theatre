@@ -7,7 +7,7 @@
 	text-transform: uppercase;
 	color: $light;
 
-	&::first-letter {
+	span {
 		color: $accent;
 	}
 }
