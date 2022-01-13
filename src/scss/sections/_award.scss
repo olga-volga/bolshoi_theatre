@@ -1,0 +1,55 @@
+.award {
+	padding-bottom: 150px;
+
+	&__wrapper {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		max-width: 1100px;
+		width: 100%;
+		height: 550px;
+		background-image: linear-gradient(rgba($bg, 0.9), rgba($bg, 0.9)), url('img/award/bg.jpg');
+	    background-position: 50% 0%;
+	    background-size: cover;
+	    background-repeat: no-repeat;
+	    margin: 0 auto;
+	}
+	&__body {
+		width: 805px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin: 0 auto;
+	}
+	&__years-block {
+		margin-right: 30px;
+	}
+	&__year {
+		font-weight: 700;
+		font-size: 72px;
+		line-height: 98px;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+		color: $accent;
+	}
+	&__nomination-block {}
+	&__stars {
+		img {
+			display: inline-block;
+			margin-right: 25px;
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+	}
+	&__descr {
+		font-family: $font-additional;
+		font-style: normal;
+		font-weight: 700;
+		font-size: 36px;
+		line-height: 150%;
+		/* or 54px */
+		color: $light;
+		margin-top: 25px;
+	}
+}
