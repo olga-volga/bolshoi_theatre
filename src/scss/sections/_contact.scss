@@ -1,0 +1,89 @@
+.contact {
+	padding-bottom: 80px;
+
+	&__body {
+		display: flex;
+		justify-content: space-between;
+		margin-top: 100px;
+	}
+	&-info-block {
+		width: 255px;
+		margin-top: -25px;
+
+		&__column {
+			display: flex;
+			flex-direction: column;
+		}
+	}
+	&__link {
+		display: block;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+	&__link,
+	&__address {
+		font-weight: bold;
+		font-size: 16px;
+		line-height: 22px;
+		letter-spacing: 0.05em;
+		text-transform: uppercase;
+		color: $light;
+		margin-top: 25px;
+	}
+	&__form-block {
+		width: 730px;
+	}
+	&__form {}
+	.form {
+
+		&__body {
+			display: flex;
+			justify-content: space-between;
+		}
+		&__column {
+			&:first-child {
+				display: flex;
+			    flex-wrap: wrap;
+				//margin: -15px;
+			}
+		}
+		&__input {
+			//width: 180px;
+			height: 35px;
+			//margin: 15px;
+		}
+		&__textarea {
+			//width: 310px;
+			height: 100%;
+		}
+		&__input,
+		&__textarea {
+			background-color: $bg-input;
+			font-family: $font-additional;
+			font-style: normal;
+			font-weight: 600;
+			font-size: 12px;
+			line-height: 150%;
+			/* or 18px */
+			color: $input;
+			border: 1px solid $border-input;
+			padding: 0 15px;
+		}
+		&__bottom {
+			display: flex;
+			justify-content: space-between;
+			margin-top: 40px;
+		}
+		&__text {
+			max-width: 390px;
+			font-family: $font-additional;
+			font-style: normal;
+			font-weight: 400;
+			font-size: 12px;
+			line-height: 150%;
+			/* or 18px */
+			color: $input;
+		}
+	}
+}

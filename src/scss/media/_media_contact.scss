@@ -1,0 +1,26 @@
+.contact {
+	@media (max-width: $maxw) {
+		&__body {
+			flex-wrap: wrap;
+		}
+		&-info-block {
+			order: 2;
+			flex: 1;
+			display: flex;
+			justify-content: space-between;
+			margin-top: 80px;
+
+			&__column {
+				align-items: flex-end;
+			}
+		}
+		&__form-block {
+			order: 1;
+		}
+		.form {
+			&__textarea {
+				width: 270px;
+			}
+		}
+	}	
+}
