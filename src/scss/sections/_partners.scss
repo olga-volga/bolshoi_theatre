@@ -1,0 +1,26 @@
+.partners {
+	padding-bottom: 120px;
+
+	&__body {
+		max-width: 1034px;
+		display: flex;
+		justify-content: center;
+		overflow: hidden;
+		margin: 100px auto 0;
+	}
+	&__list {
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		margin: -40px -39px;
+
+		li {
+			max-width: 200px;
+			flex: 0 1 calc(25% - 78px);
+			margin: 40px 39px;
+		}
+	}
+	&__logo {
+		width: 100%;
+	}
+}

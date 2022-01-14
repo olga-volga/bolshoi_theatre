@@ -1,0 +1,31 @@
+.partners {
+	@media (max-width: $maxw) {
+		&__body {
+			max-width: 100%;
+		}
+		&__list {
+			justify-content: flex-start;
+			li {
+				flex: 0 1 calc(33.333% - 78px);
+			}
+		}
+	}
+	@media (max-width: $md4) {
+		&__list {
+			justify-content: space-between;
+				li {
+					flex: 0 1 calc(50% - 78px);
+			}
+		}
+	}
+	@media (max-width: $md6) {
+		&__list {
+			justify-content: center;
+			margin: -30px 0;
+				li {
+					flex: 1 1 100%;
+					margin: 30px 0;
+			}
+		}
+	}
+}
