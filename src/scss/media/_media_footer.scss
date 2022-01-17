@@ -1,0 +1,7 @@
+.footer {
+	@media (max-width: $md4) {
+		&__body {
+			display: block;
+		}
+	}
+}

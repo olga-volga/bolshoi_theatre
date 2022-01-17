@@ -1,0 +1,21 @@
+.footer {
+	padding-bottom: 30px;
+
+	&__body {
+		display: flex;
+		justify-content: space-between;
+		border-top: 1px solid #565656;
+		padding-top: 30px;
+	}
+	&__rights,
+	&__design {
+		font-family: $font-additional;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 12px;
+		line-height: 150%;
+		/* identical to box height, or 18px */
+		color: $input;
+	}
+	&__design {}
+}
