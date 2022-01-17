@@ -36,12 +36,23 @@
 			left: -100%;
 			overflow: auto;
 			background-color: $bg;
-			padding: 140px 40px 30px;
+			padding: 140px 39px 30px;
 			transition: all 0.3s ease 0s;
 			z-index: 100;
 		}
 		&__menu.active {
 			left: 0;
+		}
+		&__close {
+			position: absolute;
+			top: 30px;
+		    right: 30px;
+			width: 32px;
+			height: 32px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		    z-index: 200;
 		}
 		&__list {
 			flex-direction: column;
@@ -51,6 +62,12 @@
 					margin-top: 0;
 				}
 			}
+		}
+		&__link {
+			font-size: 24px;
+			line-height: 33px;
+			/* identical to box height */
+			letter-spacing: 0.05em;
 		}
 		&__phone {
 			margin-top: 0;

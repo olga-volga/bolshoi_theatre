@@ -2,7 +2,8 @@
 	display: flex;
 	justify-content: space-between;
 
-	&__burger {
+	&__burger,
+	&__close {
 		display: none;
 	}
 	&__menu {
