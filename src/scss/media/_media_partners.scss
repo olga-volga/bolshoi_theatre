@@ -10,7 +10,16 @@
 			}
 		}
 	}
+	@media (max-width: $md3) {
+		padding-top: 90px;
+
+		&__body {
+			margin-top: 60px;
+		}
+	}
 	@media (max-width: $md4) {
+		padding-top: 80px;
+		
 		&__list {
 			justify-content: space-between;
 				li {

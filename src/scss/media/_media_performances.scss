@@ -1,3 +1,15 @@
 .performances {
 	@media (max-width: $maxw) {}
+	@media (max-width: $md3) {
+		padding-top: 90px;
+
+		.slider {
+			&_performances {
+				margin-top: 60px;
+			}
+		}
+	}
+	@media (max-width: $md4) {
+		padding-top: 80px;
+	}
 }
