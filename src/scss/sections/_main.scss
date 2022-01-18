@@ -1,15 +1,13 @@
 .main {
-	//position: relative;
 	background-image: linear-gradient(rgba($bg, 0.85), rgba($bg, 0.85)), url('img/main/bg.jpg');
     background-position: 50% 0%;
     background-size: auto;
     background-repeat: no-repeat;
-	padding: 50px 0 208px;
+	padding: 267px 0 208px;
 
 	&__body {
 		display: flex;
 		align-items: center;
-		margin-top: 190px;
 	}
 	&__text-block {
 		width: 540px;
