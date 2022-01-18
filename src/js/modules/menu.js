@@ -19,7 +19,7 @@ function menu() {
 		  content = document.querySelector('.content');
 
 	window.addEventListener('scroll', () => {
-		if ((window.pageYOffset > 800 || document.documentElement.scrollTop > 800) && document.documentElement.clientWidth <= 768) {
+		if ((window.pageYOffset > 800 || document.documentElement.scrollTop > 800) && document.documentElement.clientWidth <= 992) {
 			header.classList.add("sticky");
 			content.style.marginTop = '0px';
 			content.style.paddingTop = '80px';
