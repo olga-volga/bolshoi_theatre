@@ -1,0 +1,8 @@
+.content {
+	@media (max-width: $maxw) {
+		margin-top: -150px;
+	}
+	@media (max-width: $md2) {
+		margin-top: -90px;
+	}
+}

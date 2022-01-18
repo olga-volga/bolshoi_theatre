@@ -7,20 +7,11 @@
     font-family: $font-main;
     font-style: normal;
 }
-.content {
-	margin-top: -75px;
-	
-	@media (max-width: $maxw) {
-		margin-top: -150px;
-	}
-	@media (max-width: $md2) {
-		margin-top: -90px;
-	}
-}
 
 @import 'sections/_wrapper.scss';
 @import 'sections/_container.scss';
 @import 'sections/_header.scss';
+@import 'sections/_content.scss';
 @import 'sections/_main.scss';
 @import 'sections/_buttons.scss';
 @import 'sections/_aside.scss';
