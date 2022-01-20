@@ -1,0 +1,14 @@
+.modal {
+    @media (max-width: $md2) {
+        &__content {
+            min-height: 0;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+    }
+    @media (max-width: $md4) {
+        &__content {
+            padding: 50px 33px 33px;
+        }
+    }
+}
