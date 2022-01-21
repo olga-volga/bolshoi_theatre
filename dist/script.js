@@ -10,24 +10,43 @@
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _services_requests__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../services/requests */ "./src/js/services/requests.js");
+/* harmony import */ var _modal__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modal */ "./src/js/modules/modal.js");
+
+
+
 
 
 function form() {
-  const form = document.querySelector('form');
+  const form = document.querySelector('form'),
+        statusModal = document.querySelector('#status');
+  const message = {
+    successTitle: "Спасибо за вашу заявку!",
+    successDescr: "Мы свяжемся с вами в ближайшее время!",
+    failTitle: "Произошла ошибка...",
+    failDescr: "Попробуйте еще раз позднее"
+  };
+
+  function showStatusMessage(title, descr) {
+    const messageTitle = statusModal.querySelector('.modal__subtitle'),
+          messageDescr = statusModal.querySelector('.modal__descr');
+    messageTitle.textContent = title;
+    messageDescr.textContent = descr;
+    (0,_modal__WEBPACK_IMPORTED_MODULE_1__.openModal)(statusModal);
+  }
+
   form.addEventListener('submit', e => {
     e.preventDefault();
     const formData = new FormData(form);
     (0,_services_requests__WEBPACK_IMPORTED_MODULE_0__["default"])('php/server.php', formData).then(res => {
-      console.log(res); //showStatusMessage(message.successTitle, message.successDescr, messageWindow);
-    }).catch(() => {//showStatusMessage(message.failTitle, message.failDescr, messageWindow);
-    }).finally(() => {//clearInput();
-      //clearOrder();
-
-      /*setTimeout(() => {
-          windows.forEach(item => {
-              closeModal(item);
-          });
-      }, 5000);*/
+      console.log(res);
+      showStatusMessage(message.successTitle, message.successDescr);
+    }).catch(() => {
+      showStatusMessage(message.failTitle, message.failDescr);
+    }).finally(() => {
+      form.reset();
+      setTimeout(() => {
+        (0,_modal__WEBPACK_IMPORTED_MODULE_1__.closeModal)(statusModal);
+      }, 5000);
     });
   });
 }
@@ -73,6 +92,56 @@ function menu() {
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (menu);
+
+/***/ }),
+
+/***/ "./src/js/modules/modal.js":
+/*!*********************************!*\
+  !*** ./src/js/modules/modal.js ***!
+  \*********************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "calcScrollWidth": function() { return /* binding */ calcScrollWidth; },
+/* harmony export */   "openModal": function() { return /* binding */ openModal; },
+/* harmony export */   "closeModal": function() { return /* binding */ closeModal; }
+/* harmony export */ });
+function calcScrollWidth() {
+  let div = document.createElement('div');
+  div.style.cssText = 'width:50px;height:50px;overflow-y:scroll;visibility:hidden;';
+  document.body.appendChild(div);
+  let scrollWidth = div.offsetWidth - div.clientWidth;
+  document.body.removeChild(div);
+  return scrollWidth;
+}
+
+function openModal(elem) {
+  elem.style.display = 'block';
+  document.body.style.paddingRight = `${calcScrollWidth()}px`;
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal(elem) {
+  elem.style.display = '';
+  document.body.style.paddingRight = '0px';
+  document.body.style.overflow = '';
+}
+
+function modal() {
+  const close = document.querySelector('.modal__close'),
+        modal = document.querySelector('.modal');
+  modal.addEventListener('click', e => {
+    if (e.target == modal || e.target.parentElement == close) {
+      closeModal(modal);
+    }
+  });
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (modal);
+
+
+
 
 /***/ }),
 
@@ -252,6 +321,23 @@ const postData = async (url, data) => {
 /******/ 	}
 /******/ 	
 /************************************************************************/
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	!function() {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = function(exports, definition) {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	}();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	!function() {
+/******/ 		__webpack_require__.o = function(obj, prop) { return Object.prototype.hasOwnProperty.call(obj, prop); }
+/******/ 	}();
+/******/ 	
 /******/ 	/* webpack/runtime/make namespace object */
 /******/ 	!function() {
 /******/ 		// define __esModule on exports
@@ -275,6 +361,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_scroll__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/scroll */ "./src/js/modules/scroll.js");
 /* harmony import */ var _modules_slider__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/slider */ "./src/js/modules/slider.js");
 /* harmony import */ var _modules_form__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/form */ "./src/js/modules/form.js");
+/* harmony import */ var _modules_modal__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/modal */ "./src/js/modules/modal.js");
+
 
 
 
@@ -301,6 +389,7 @@ window.addEventListener('DOMContentLoaded', () => {
     autoplay: true
   });
   (0,_modules_form__WEBPACK_IMPORTED_MODULE_3__["default"])();
+  (0,_modules_modal__WEBPACK_IMPORTED_MODULE_4__["default"])();
 });
 }();
 /******/ })()

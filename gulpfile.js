@@ -10,8 +10,8 @@ const webpack = require("webpack-stream");
 const htmlmin = require('gulp-htmlmin');
 const imagemin = require('gulp-imagemin');
 
-//const dist = "dist/";
-const dist = "C:/MAMP/htdocs/test/theatre";
+const dist = "dist/";
+//const dist = "C:/MAMP/htdocs/test/theatre";
 
 gulp.task('html', function() {
     return gulp.src("src/*.html")
