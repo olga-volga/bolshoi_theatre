@@ -26,6 +26,15 @@
 		letter-spacing: 0.1em;
 		text-transform: uppercase;
 		color: $light;
+		transition: 0.2s ease;
+
+		&:hover {
+			font-size: 22px;
+			color: $accent;
+		}
+	}
+	&__social {
+		display: none;
 	}
 	&__phone {
 		display: block;

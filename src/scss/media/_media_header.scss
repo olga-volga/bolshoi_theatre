@@ -48,7 +48,7 @@
 			left: -100%;
 			overflow: auto;
 			background-color: $bg;
-			padding: 140px 39px 30px;
+			padding: 140px 39px;
 			transition: all 0.3s ease 0s;
 			z-index: 100;
 		}
@@ -82,8 +82,32 @@
 			/* identical to box height */
 			letter-spacing: 0.05em;
 		}
+		&__social {
+			display: flex;
+			flex-wrap: wrap;
+			width: 140px;
+			margin: 39px auto 0;
+		}
+		&__social-link {
+			flex: 50%;
+			width: 45px;
+			display: flex;
+			align-items: flex-end;
+			margin-top: 50px;
+
+			&:nth-child(even) {
+				justify-content: flex-end;
+			}
+		}
 		&__phone {
 			margin-top: 0;
+		}
+	}
+}
+@media (max-width: $md6) {
+	.header {
+		&__menu {
+			width: 100%;
 		}
 	}
 }
