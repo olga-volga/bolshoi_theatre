@@ -1,6 +1,8 @@
 import menu from './modules/menu';
 import scroll from './modules/scroll';
 import slider from './modules/slider';
+import form from './modules/form';
+import modal from './modules/modal';
 
 window.addEventListener('DOMContentLoaded', () => {
 	'use strict';
@@ -23,4 +25,6 @@ window.addEventListener('DOMContentLoaded', () => {
 		effects: false,
 		autoplay: true
 	});
+	form();
+	modal();
 });

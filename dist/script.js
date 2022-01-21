@@ -2,6 +2,40 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./src/js/modules/form.js":
+/*!********************************!*\
+  !*** ./src/js/modules/form.js ***!
+  \********************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _services_requests__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../services/requests */ "./src/js/services/requests.js");
+
+
+function form() {
+  const form = document.querySelector('form');
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    const formData = new FormData(form);
+    (0,_services_requests__WEBPACK_IMPORTED_MODULE_0__["default"])('php/server.php', formData).then(res => {
+      console.log(res); //showStatusMessage(message.successTitle, message.successDescr, messageWindow);
+    }).catch(() => {//showStatusMessage(message.failTitle, message.failDescr, messageWindow);
+    }).finally(() => {//clearInput();
+      //clearOrder();
+
+      /*setTimeout(() => {
+          windows.forEach(item => {
+              closeModal(item);
+          });
+      }, 5000);*/
+    });
+  });
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (form);
+
+/***/ }),
+
 /***/ "./src/js/modules/menu.js":
 /*!********************************!*\
   !*** ./src/js/modules/menu.js ***!
@@ -170,6 +204,25 @@ function slider() {
 
 /* harmony default export */ __webpack_exports__["default"] = (slider);
 
+/***/ }),
+
+/***/ "./src/js/services/requests.js":
+/*!*************************************!*\
+  !*** ./src/js/services/requests.js ***!
+  \*************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+const postData = async (url, data) => {
+  let result = await fetch(url, {
+    method: 'POST',
+    body: data
+  });
+  return await result.text();
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (postData);
+
 /***/ })
 
 /******/ 	});
@@ -221,6 +274,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_menu__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/menu */ "./src/js/modules/menu.js");
 /* harmony import */ var _modules_scroll__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/scroll */ "./src/js/modules/scroll.js");
 /* harmony import */ var _modules_slider__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/slider */ "./src/js/modules/slider.js");
+/* harmony import */ var _modules_form__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/form */ "./src/js/modules/form.js");
+
 
 
 
@@ -245,6 +300,7 @@ window.addEventListener('DOMContentLoaded', () => {
     effects: false,
     autoplay: true
   });
+  (0,_modules_form__WEBPACK_IMPORTED_MODULE_3__["default"])();
 });
 }();
 /******/ })()
